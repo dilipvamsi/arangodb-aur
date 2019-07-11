@@ -1,6 +1,8 @@
+# Maintainer: dilipvamsi <m.dilipvamsi at gmail dot com>
+
 _pkgname='arangodb'
 pkgname="${_pkgname}-bin"
-pkgdesc="A multi-model NoSQL database, combining key-value, document and graph data models."
+pkgdesc="Arangodb binary from deb."
 pkgver=3.4.7
 pkgrel=1
 _pkgver='3.4.7-1'
@@ -8,7 +10,10 @@ arch=('x86_64')
 url="https://www.arangodb.com/"
 license=('APACHE')
 provides=(${_pkgname})
-conflicts=(${_pkgname})
+conflicts=(
+    "${_pkgname}"
+    "${_pkgname}-client-bin"
+)
 source=(
     https://download.arangodb.com/arangodb34/Community/Linux/arangodb3_${_pkgver}_amd64.deb
 )
